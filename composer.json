@@ -1,0 +1,21 @@
+{
+  "name": "magicandcode/mars-photos-php",
+  "description": "Search for photos taken by the MArs rover Curiosity.",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "magicandcode",
+      "email": "magicandcode@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MarsPhotos\\": "app",
+      "": "/"
+    }
+  }
+}
