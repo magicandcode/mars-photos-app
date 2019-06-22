@@ -27,6 +27,11 @@ if (!\class_exists('SearchForm')) {
             'camera' => 'any'
         ];
 
+        public static function getFields(): array
+        {
+            return self::$fields;
+        }
+
         public static function getValue(string $name)
         {
             // Checks if valid field name
