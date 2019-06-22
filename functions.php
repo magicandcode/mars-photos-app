@@ -9,9 +9,8 @@ function getAppPath(): string {
 
 function dd($args): void
 {
+    $args = func_get_args($args); // Gets array with arguments
     die(
-        var_dump(
-            $args
-        )
+        var_dump(...$args)
     );
 }
