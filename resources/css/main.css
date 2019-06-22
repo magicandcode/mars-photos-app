@@ -1,0 +1,77 @@
+div.main.app
+{
+    margin: 0 auto;
+    max-width: 450px;
+    min-width: 300px;
+    width: 50%;
+}
+
+h1.app
+{
+    display: inline-block;
+    margin: 1em auto 0;
+    padding-left: 2em;
+    margin-bottom: 1em;
+    position: relative;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h1.app::after
+{
+    background: url('../../public/favicon.svg');
+    background-size: cover;
+    content: '';
+    display: block;
+    font-size: inherit;
+    left: -.5em;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: -50%;
+}
+
+section.container.search-form
+{
+    margin: 0 auto;
+    max-width: 400px;
+    min-width: 200px;
+    width: 100%;
+}
+
+header.header.search-form
+{
+    text-align: center;
+}
+    header.header.search-form h1
+    {
+        font-size: 1.5em;
+    }
+
+#search-form
+{
+    text-align: center;
+}
+
+#search-form input,
+#search-form select
+{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#search-form label,
+#search-form button
+{
+    margin-top: 1em;
+}
+
+#search-form label
+{
+    display: block;
+}
+
+footer.app p
+{
+    text-align: center;
+}
