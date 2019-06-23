@@ -34,13 +34,26 @@ if (!\class_exists('SearchForm')) {
 
         public static function getValue(string $name)
         {
+            \sanitize($name);
             // Checks if valid field name
             if (self::isValidFieldName($name)) {
                 if (self::isValueSet($name)) {
-                    return self::useMethod($name);
+                    if ($name === 'sol') {
+                        if (self::isValidSol(self::useMethod($name))) {
+                            return \sanitized(self::useMethod($name));
+                        } else {
+                            return self::getDefaultValue($name);
+                        }
+                    } elseif ($name === 'camera') {
+                        if (self::isValidCameraKey(self::useMethod($name))) {
+                            return \sanitized(self::useMethod($name));
+                        } else {
+                            return self::getDefaultValue($name);
+                        }
+                    }
                 }
 
-                return self::$fields[$name]; // Returns default value
+                return '';
             }
 
             return ''; // Returns empty if invalid name
@@ -59,7 +72,7 @@ if (!\class_exists('SearchForm')) {
         private static function isValidFieldName(string $name): bool
         {
             // Sanitises input
-            \out($name);
+            \sanitize($name);
 
             // Gets field names
             $fields = \array_keys(self::$fields);

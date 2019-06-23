@@ -15,3 +15,14 @@ function dd($args): void
         var_dump(...$args)
     );
 }
+
+// Santizes input value
+function sanitize(&$input): void
+{
+    $input = \htmlspecialchars($input, ENT_QUOTES);
+}
+
+function sanitized($input): string //todo: Returns string?
+{
+ return \htmlspecialchars($input, ENT_QUOTES);
+}

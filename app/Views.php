@@ -60,16 +60,19 @@ if (!\class_exists('Views')) {
             }
 
             foreach ($viewsToRegister as $view) {
-                $views[] = $view;
+                // Only register valid views
+                if (\file_exists(self::getPath($view))) {
+                    $views[] = $view;
+                }
             }
 
             // Make sure that header is the first view and footer the last
             if (self::hasHeader()) {
-                // Todo: Move to beginning of views array
+                self::positionHeader();
             }
 
             if (self::hasFooter()) {
-                // Todo: Move to the end of views array
+                self::positionFooter();
             }
         }
 
@@ -136,9 +139,7 @@ if (!\class_exists('Views')) {
         {
             $views = &self::$views;
 
-            if (!\is_array($views)) {
-                return false;
-            } else {
+            if (\is_array($views)) {
                 if (\count($viewsToUnregister) > 0) {
                     foreach ($viewsToUnregister as $view) {
                         // Prevent unregistering header or footer
@@ -158,6 +159,8 @@ if (!\class_exists('Views')) {
                     return false;
                 }
             }
+
+            return false;
         }
 
         public static function getViews(): array

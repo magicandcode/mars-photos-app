@@ -10,7 +10,9 @@
     }
   ],
   "require": {
-    "php": ">=7.3.0"
+    "php": ">=7.3.0",
+    "ext-gettext": "*",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

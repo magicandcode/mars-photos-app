@@ -7,7 +7,7 @@ use MarsPhotos\Rover;
 // Prevent direct access
 \debug_backtrace() || die('No.');
 
-if (!\trait_exists('Form')) {
+if (!\trait_exists('CameraTrait')) {
     trait CameraTrait
     {
         use MethodTrait;
@@ -38,6 +38,8 @@ if (!\trait_exists('Form')) {
 
         public static function isValidCameraKey(string $key): bool
         {
+            \sanitize($key);
+
             return \in_array($key, self::getValidCameraKeys());
         }
 

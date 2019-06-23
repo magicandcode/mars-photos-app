@@ -33,12 +33,17 @@ if (!\trait_exists('MethodTrait')) {
          */
         private static function useMethod(string $name)
         {
+            \sanitize($name);
             // Checks if $_GET or $_POST is set
             if (self::methodIsSet()) {
                 if (Form::getMethod() === 'get') {
-                    return $_GET[$name];
+                    $value = \sanitized($_GET[$name]);
+
+                    return $value;
                 } elseif (Form::getMethod() === 'post') {
-                    return $_POST[$name];
+                    $value = \sanitized($_POST[$name]);
+
+                    return $value;
                 }
                 // todo: throw Exception?
             }
@@ -46,14 +51,28 @@ if (!\trait_exists('MethodTrait')) {
             return ''; // Returns empty string which will "fail" as a set value
         }
 
+        private static function setValue(string $name): void
+        {
+            \sanitize($name);
+
+            if (Form::getMethod() === 'get') {
+                $_GET[$name] = \sanitized(self::getValue($name));
+            } elseif (Form::getMethod() === 'post') {
+                $_POST[$name] = \sanitized(self::getValue($name));
+            }
+        }
+
+        // Assume values are valid!
         public static function allValuesSet(): bool
         {
             // Gets form field names
             $fields = \array_keys(self::$fields);
 
             foreach ($fields as $name) {
+                self::setValue($name);
+
                 if (self::isValueSet($name)) {
-                    continue;
+                   continue;
                 } else {
                     return false;
                 }
@@ -65,7 +84,7 @@ if (!\trait_exists('MethodTrait')) {
         public static function isValueSet(string $name): bool
         {
             // Sanitizes input
-            \out($name);
+            \sanitize($name);
             $value = self::useMethod($name) !== null ? self::useMethod($name) : '';
 
             if (isset($value) && !empty($value)) {

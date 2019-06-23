@@ -2,21 +2,32 @@
 
 namespace MarsPhotos\PhotoSearch\Form;
 
+use MarsPhotos\App;
+use MarsPhotos\Rover;
+
 // Prevent direct access
 \debug_backtrace() || die('No.');
 
-if (!\trait_exists('Form')) {
+if (!\trait_exists('SolTrait')) {
     trait SolTrait
     {
         public static function getMaxSol(): int
         {
-            // todo: Get max_sol from Rover
-            return 10;
+            return (int) App::get('rover')->maxSol();
         }
 
         public static function isValidSol($sol): bool
         {
-            return $sol >= 0 && $sol <= self::getMaxSol();
+            if (
+                \is_numeric($sol)
+                && \floor($sol) == $sol
+                && $sol >= 0
+                && $sol <= self::getMaxSol()
+            ) {
+                return true;
+            }
+
+            return false;
         }
     }
 }
