@@ -1,6 +1,6 @@
 {
   "name": "magicandcode/mars-photos-php",
-  "description": "Search for photos taken by the MArs rover Curiosity.",
+  "description": "Search for photos taken by the Mars rover Curiosity.",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
