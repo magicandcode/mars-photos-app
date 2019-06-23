@@ -34,13 +34,13 @@ class Request
     {
         $this->query = $query;
         $this->setUrl();
-        $this->setResponse(); // Todo: Make sure it's only requested once per submit
+        $this->setResponse();
     }
 
     /**
      * Static construct wrapper to allow for chaining.
      *
-     * @param string $email
+     * @param Query $query
      * @return Request
      * @throws \Exception
      */
@@ -52,7 +52,6 @@ class Request
     /**
      * Sets Request url.
      *
-     * @param string $email
      * @throws \Exception
      */
     private function setUrl(): void
