@@ -18,10 +18,8 @@ if (!\class_exists('ManifestQuery')) {
 
         private function __construct()
         {
-            // Check if form has been submitted
-            if (Form::allValuesSet()) {
-                $this->set();
-            }
+            // Sets url on instantiation
+            $this->set();
         }
 
         public static function get()
