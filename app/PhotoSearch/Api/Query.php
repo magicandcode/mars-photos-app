@@ -46,7 +46,7 @@ if (!\class_exists('Query')) {
         {
             $url = \str_replace(
                 ['OPTIONS_QUERY'],//, 'DEMO_KEY'], // todo: set API key in request?
-                [$this->getOptionsQuery()],//, App::get('app.api.key')],
+                [$this->optionsQuery],//, App::get('app.api.key')],
                 $this->baseUrl
             );
             // todo: further validation/checks?
@@ -122,11 +122,6 @@ if (!\class_exists('Query')) {
 
                 $this->optionsQuery = $query ?: $this->defaultOptionsQuery;
             }
-        }
-
-        private function getOptionsQuery(): string
-        {
-            return $this->optionsQuery;
         }
     }
 }
