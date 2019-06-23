@@ -32,12 +32,12 @@ if (!\class_exists('Query')) {
             }
         }
 
-        public static function init(): Query
+        public static function get(): Query
         {
             return new Query();
         }
 
-        public function get(): string
+        public function getUrl(): string
         {
             return $this->url;
         }
@@ -115,6 +115,15 @@ if (!\class_exists('Query')) {
                     $options[] = $this->${'name'};
                 }
 
+                // Removes camera query if "any" camera, invalid Nasa API query,
+                // Uses "any" as default if url hs no camera query
+                $anyCamera = 'camera=any';
+
+                if (\in_array($anyCamera, $options)) {
+                    $index = \array_search($anyCamera, $options);
+                    unset($options[$index]);
+                }
+
                 // Join options and separate by &
                 $query = \implode(
                     '&', \array_filter($options)
@@ -122,6 +131,16 @@ if (!\class_exists('Query')) {
 
                 $this->optionsQuery = $query ?: $this->defaultOptionsQuery;
             }
+        }
+
+        private function request(): Request
+        {
+            return Request::get($this);
+        }
+
+        public function response(): Response
+        {
+            return $this->request()->response();
         }
     }
 }
