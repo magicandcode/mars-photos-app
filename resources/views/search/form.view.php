@@ -15,6 +15,7 @@ use MarsPhotos\PhotoSearch\Form\SearchForm as Form;
         </header>
         <form id="search-form" action="." method="<?=Form::getMethod()?>" class="pure-form pure-form-stacked">
             <fieldset>
+                <input name="photos" type="hidden">
                 <label for="sol"><i class="far fa-sun"></i> <?=_('Sol')?></label>
                 <input
                         name="sol"
