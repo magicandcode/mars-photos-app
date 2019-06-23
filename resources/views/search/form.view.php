@@ -11,7 +11,7 @@
                 <label for="sol"><i class="far fa-sun"></i> <?=_('Sol')?></label>
                 <input
                         name="sol"
-                        value="0"
+                        value="<?=Form::getValue('sol')?>"
                         type="number"
                         min="0"
                         max="<?=Form::getMaxSol()?>"
