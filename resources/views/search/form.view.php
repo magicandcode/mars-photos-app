@@ -18,7 +18,7 @@
                         id="sol"
                 />
                 <label for="camera"><i class="fas fa-camera"></i> <?=_('Camera')?></label>
-                <select name="camera" id=""camera">
+                <select name="camera" id="camera">
                     <?php
                         Form::getCameraOptions();
                     ?>
