@@ -33,9 +33,12 @@ if (!\trait_exists('MethodTrait')) {
          */
         private static function useMethod(string $name)
         {
+            \sanitize($name);
             // Checks if $_GET or $_POST is set
             if (self::methodIsSet()) {
                 if (Form::getMethod() === 'get') {
+                    \sanitize($_GET[$name]);
+
                     return $_GET[$name];
                 } elseif (Form::getMethod() === 'post') {
                     return $_POST[$name];
@@ -65,7 +68,7 @@ if (!\trait_exists('MethodTrait')) {
         public static function isValueSet(string $name): bool
         {
             // Sanitizes input
-            \out($name);
+            \sanitize($name);
             $value = self::useMethod($name) !== null ? self::useMethod($name) : '';
 
             if (isset($value) && !empty($value)) {

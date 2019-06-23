@@ -38,6 +38,8 @@ if (!\trait_exists('Form')) {
 
         public static function isValidCameraKey(string $key): bool
         {
+            \sanitize($key);
+
             return \in_array($key, self::getValidCameraKeys());
         }
 
