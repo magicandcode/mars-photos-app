@@ -4,6 +4,8 @@ include_once 'functions.php';
 
 // Autoloader
 use MarsPhotos\App;
+use MarsPhotos\Rover;
+
 include_once 'vendor/autoload.php';
 
 // App Container
@@ -14,3 +16,7 @@ App::bind('api', App::get('config')['api']);
 App::bind('dir.scripts', '../resources/js/');
 App::bind('dir.styles', '../resources/css/');
 App::bind('dir.public', '../public/');
+
+// Init Rover
+$rover = Rover::get();
+App::bind('rover', $rover);
