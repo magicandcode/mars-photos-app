@@ -10,14 +10,13 @@
     }
   ],
   "require": {
-    "php": ">=7.3.0",
+    "php": ">=7.2.0",
     "ext-gettext": "*",
     "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
-      "MarsPhotos\\": "app",
-      "": "/"
+      "MarsPhotos\\": "app"
     }
   }
 }
