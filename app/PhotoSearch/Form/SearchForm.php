@@ -38,10 +38,22 @@ if (!\class_exists('SearchForm')) {
             // Checks if valid field name
             if (self::isValidFieldName($name)) {
                 if (self::isValueSet($name)) {
-                    return \sanitized(self::useMethod($name));
+                    if ($name === 'sol') {
+                        if (self::isValidSol(self::useMethod($name))) {
+                            return \sanitized(self::useMethod($name));
+                        } else {
+                            return self::getDefaultValue($name);
+                        }
+                    } elseif ($name === 'camera') {
+                        if (self::isValidCameraKey(self::useMethod($name))) {
+                            return \sanitized(self::useMethod($name));
+                        } else {
+                            return self::getDefaultValue($name);
+                        }
+                    }
                 }
 
-                return self::$fields[$name]; // Returns default value
+                return '';
             }
 
             return ''; // Returns empty if invalid name

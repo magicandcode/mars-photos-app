@@ -1,9 +1,5 @@
 <?php
-    // Welcome View
-?>
-    <h1>Mars Rover Photos App</h1>
-    <p>Lorem ipsum dolor sit amet.</p>
-<?php
+// Welcome view
 
 use MarsPhotos\App;
 
