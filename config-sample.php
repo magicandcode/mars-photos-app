@@ -1,5 +1,9 @@
 <?php
 return [
-    'title'  => _('Mars Rover Photos'),
-
+    'app' => [
+        'title'  => _('Mars Rover Photos'),
+    ],
+    'api' => [
+        'key' => 'DEMO_KEY'
+    ]
 ];
