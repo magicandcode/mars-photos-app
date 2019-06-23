@@ -27,12 +27,13 @@ class Request
     /**
      * Request constructor, calls API on instantiation.
      *
-     * @param string $email
+     * @param Query $query
      * @throws \Exception
      */
     private function __construct(Query $query)
     {
         $this->query = $query;
+        $this->setUrl();
         $this->setResponse(); // Todo: Make sure it's only requested once per submit
     }
 
@@ -54,12 +55,12 @@ class Request
      * @param string $email
      * @throws \Exception
      */
-    private function setUrl(string $email): void
+    private function setUrl(): void
     {
         $this->url = \str_replace(
             ['DEMO_KEY'], // Replace in url
             [App::get('api.key')], // Replace with
-            $this->query->get()
+            $this->query->getUrl()
         );
     }
 
@@ -81,6 +82,6 @@ class Request
      */
     public function response(): Response
     {
-        return new Response($this->response);
+        return Response::get($this->response);
     }
 }
