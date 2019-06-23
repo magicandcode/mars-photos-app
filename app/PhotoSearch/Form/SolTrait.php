@@ -8,7 +8,7 @@ use MarsPhotos\Rover;
 // Prevent direct access
 \debug_backtrace() || die('No.');
 
-if (!\trait_exists('Form')) {
+if (!\trait_exists('SolTrait')) {
     trait SolTrait
     {
         public static function getMaxSol(): int
