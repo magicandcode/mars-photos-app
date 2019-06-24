@@ -53,7 +53,7 @@ if (!\class_exists('SearchForm')) {
                     }
                 }
 
-                return '';
+                return $name === 'sol' ? 0 : '';
             }
 
             return ''; // Returns empty if invalid name

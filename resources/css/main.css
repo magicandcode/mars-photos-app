@@ -1,3 +1,6 @@
+div.main.app {
+    padding-top: .6em;
+}
 p
 {
     line-height: 1.2em;
@@ -28,7 +31,7 @@ h1.app
     display: inline-block;
     margin: 1em auto 0;
     padding-left: 2em;
-    margin-bottom: 1em;
+    margin: 1em auto;
     position: relative;
     text-align: center;
     left: 50%;
@@ -90,6 +93,7 @@ header.header.search-form
 
 footer.app p
 {
+    padding-top: .6em;
     text-align: center;
 }
 
@@ -133,4 +137,56 @@ section.error ul
             padding: .5em;
             width: 100%;
             max-width: 500px;
+        }
+
+
+        @media screen and (max-width: 475px)
+        {
+            h1.app
+            {
+                display: inline-block;
+                margin: 1em auto 0;
+                padding-left: 0em;
+                margin: 1em auto;
+                position: relative;
+                text-align: center;
+                bottom: -.8em;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+            }
+            h1.app::after
+            {
+                background: url('../../public/favicon.svg');
+                background-size: cover;
+                content: '';
+                display: block;
+                font-size: inherit;
+                left: 50%;
+                top: -1.6em;
+                transform: translateX(-50%);
+                width: 1.6em;
+                height: 1.6em;
+                position: absolute;
+                z-index: 99;
+            }
+
+
+            .photos .photo {
+                text-align: center;
+                box-sizing: border-box;
+                padding: 1em;
+                display: inline-block;
+                background: transparent;
+                width: 100%;
+            }
+            .photos .photo img {
+                border: 4px solid #ccc;
+                border-radius: 2em;
+                box-sizing: border-box;
+                display: block;
+                padding: .5em;
+                width: 100%;
+                max-width: 500px;
+            }
         }

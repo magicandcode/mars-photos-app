@@ -37,7 +37,7 @@ if (!\trait_exists('MethodTrait')) {
             // Checks if $_GET or $_POST is set
             if (self::methodIsSet()) {
                 if (Form::getMethod() === 'get') {
-                    $value = \sanitized($_GET[$name]);
+                    @$value = \sanitized($_GET[$name]);
 
                     return $value;
                 } elseif (Form::getMethod() === 'post') {
