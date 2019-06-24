@@ -15,7 +15,7 @@ App::bind('api', App::get('config')['api']);
 // todo: set paths relative to root
 App::bind('dir.scripts', '../resources/js/');
 App::bind('dir.styles', '../resources/css/');
-App::bind('dir.public', '../');
+App::bind('dir.root', './');
 
 // Init Rover
 $rover = Rover::get();
