@@ -101,6 +101,6 @@ modules.xml
 
 # App specific files
 # Config
-config.php
+# config.php
 
 public/
