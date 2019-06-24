@@ -1,4 +1,6 @@
 <?php
+// Prevent direct access
+\debug_backtrace() || die('No.');
 
 function getAppPath(): string {
     return \pathinfo(

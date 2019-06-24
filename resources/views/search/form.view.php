@@ -1,7 +1,9 @@
 <?php
+// Prevent direct access
+\debug_backtrace() || die('No.');
 
-use MarsPhotos\App;
-use MarsPhotos\PhotoSearch\Form\SearchForm as Form;
+    use MarsPhotos\App;
+    use MarsPhotos\PhotoSearch\Form\SearchForm as Form;
 
     $rover = App::get('rover');
 ?>

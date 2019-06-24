@@ -1,12 +1,15 @@
 <?php
-        $photos = isset($_POST['photos']) ? $_POST['photos'] : [];
-        $photosCount = \count($photos);
+    // Prevent direct access
+    \debug_backtrace() || die('No.');
 
-        // Prepare for pagination
-        $pageNum = 1;
-        $photosPerPage = $photosCount; // Show all... todo: pagination!
-        $max = ($photosPerPage * $pageNum) - 1;
-        $min = $max - $photosPerPage + 1;
+    $photos = isset($_POST['photos']) ? $_POST['photos'] : [];
+    $photosCount = \count($photos);
+
+    // Prepare for pagination
+    $pageNum = 1;
+    $photosPerPage = $photosCount; // Show all... todo: pagination!
+    $max = ($photosPerPage * $pageNum) - 1;
+    $min = $max - $photosPerPage + 1;
 ?>
     <section class="photos">
         <h2><?=_("Found <mark>$photosCount</mark> Photos")?></h2>

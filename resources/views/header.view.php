@@ -1,6 +1,8 @@
 <?php
+    // Prevent direct access
+    \debug_backtrace() || die('No.');
 
-use MarsPhotos\App;
+    use MarsPhotos\App;
 ?>
 <!doctype html5>
 <html>

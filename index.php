@@ -1,4 +1,5 @@
 <?php
+
 include_once 'bootstrap.php';
 use MarsPhotos\App;
 use MarsPhotos\PhotoSearch\Form\SearchForm as Form;

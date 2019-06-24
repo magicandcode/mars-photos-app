@@ -1,4 +1,7 @@
 <?php
+// Prevent direct access
+\debug_backtrace() || die('No.');
+
 // Functions lib
 include_once 'functions.php';
 

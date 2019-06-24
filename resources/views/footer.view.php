@@ -1,4 +1,7 @@
 <?php
+    // Prevent direct access
+    \debug_backtrace() || die('No.');
+
     use MarsPhotos\App;
 ?>
         <footer class="app">

@@ -39,7 +39,7 @@ h1.app
 }
 h1.app::after
 {
-    background: url('../../public/favicon.svg');
+    background: url('../../favicon.svg');
     background-size: cover;
     content: '';
     display: block;
@@ -157,7 +157,7 @@ section.error ul
             }
             h1.app::after
             {
-                background: url('../../public/favicon.svg');
+                background: url('../../favicon.svg');
                 background-size: cover;
                 content: '';
                 display: block;

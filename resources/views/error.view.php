@@ -1,4 +1,6 @@
 <?php
+    // Prevent direct access
+    \debug_backtrace() || die('No.');
 ?>
     <section class="error">
         <h2><?=_('Oops! Something went wrong!')?></h2>
