@@ -4,7 +4,7 @@
 
         // Prepare for pagination
         $pageNum = 1;
-        $photosPerPage = 10;
+        $photosPerPage = $photosCount; // Show all... todo: pagination!
         $max = ($photosPerPage * $pageNum) - 1;
         $min = $max - $photosPerPage + 1;
 ?>
@@ -42,13 +42,14 @@
             ?>
             </ul>
             <?php
-
+/* // todo: Some kind of pagination or choice to view all photos
             if ($photosCount > $photosPerPage) {
                 $remainingPhotos = $photosCount - $photosPerPage;
                 ?>
                 <p><?=_("Found <mark>{$remainingPhotos}</mark> more photos...")?></p>
                 <?php
             }
+            */
         } else {
             ?>
             <p><?=_('No photos with the specified search criteria could be found.')?></p>
