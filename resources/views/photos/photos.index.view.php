@@ -23,6 +23,10 @@
                 if ($index > $max) {
                     break;
                 }
+
+                // Adds https to avoid console warnings
+                $filteredSrc = str_replace('http:', 'https:', $photo->img_src);
+
                 ?>
 
                 <li class="photo">
@@ -30,7 +34,7 @@
                         href="<?=$photo->img_src?>"
                         target="_blank"
                     ><img
-                        src="<?=$photo->img_src?>"
+                        src="<?=$filteredSrc?>"
                         alt="<?=_("Photo {$photo->id} on mission day {$photo->sol}")?>"
                         id="photo-<?=$photo->id?>"
                         ></a>
