@@ -42,14 +42,14 @@
             ?>
             </ul>
             <?php
-/* // todo: Some kind of pagination or choice to view all photos
+// todo: Some kind of pagination or choice to view all photos
             if ($photosCount > $photosPerPage) {
                 $remainingPhotos = $photosCount - $photosPerPage;
                 ?>
                 <p><?=_("Found <mark>{$remainingPhotos}</mark> more photos...")?></p>
                 <?php
             }
-            */
+
         } else {
             ?>
             <p><?=_('No photos with the specified search criteria could be found.')?></p>
