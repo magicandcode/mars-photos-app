@@ -98,6 +98,7 @@ modules.xml
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/composer,phpstorm+all
+.DS_Store
 
 # App specific files
 # Config
