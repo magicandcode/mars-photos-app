@@ -7,7 +7,7 @@
 
     // Prepare for pagination
     $pageNum = 1;
-    $photosPerPage = $photosCount; // Show all... todo: pagination!
+    $photosPerPage = 20;//$photosCount; // Show all... todo: pagination!
     $max = ($photosPerPage * $pageNum) - 1;
     $min = $max - $photosPerPage + 1;
 ?>
